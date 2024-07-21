@@ -1,5 +1,9 @@
-@php use Illuminate\Support\Str; @endphp
 <div>
+    <style>
+        .archived {
+            background-color: lightgray;
+        }
+    </style>
     <h2>
         Posts:
     </h2>
@@ -17,20 +21,7 @@
         </thead>
         <tbody>
         @foreach($posts as $post)
-            <tr wire:key="{{ $post->id }}">
-                <td>
-                    {{ $post->title }}
-                </td>
-                <td>
-                    {{ Str::words($post->content,8) }}
-                </td>
-                <td>
-                    <button type="button" wire:click="delete({{ $post->id }})"
-                            wire:confirm="Are you sure want to delete this post?">
-                        Delete
-                    </button>
-                </td>
-            </tr>
+            <livewire:post-row :key="$post->id" :$post/>
         @endforeach
         </tbody>
     </table>
