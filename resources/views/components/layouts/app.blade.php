@@ -13,16 +13,16 @@
 </head>
 <body>
 <nav>
-    <a href="/" @class(['current' => request()->is('/')])>
+    <a wire:navigate href="/" @class(['current' => request()->is('/')])>
         Todos
     </a>
-    <a href="/counter" @class(['current' => request()->is('counter')])>
+    <a wire:navigate href="/counter" @class(['current' => request()->is('counter')])>
         Counter
     </a>
-    <a href="/posts" @class(['current' => request()->is('posts')])>
+    <a wire:navigate href="/posts" @class(['current' => request()->is('posts')])>
         Posts
     </a>
-    <a href="/create-post" @class(['current' => request()->is('create-post')])>
+    <a wire:navigate href="/create-post" @class(['current' => request()->is('create-post')])>
         Create Post
     </a>
 </nav>
